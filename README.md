@@ -8,9 +8,11 @@ A file here is public at:
 
     https://cdn.jsdelivr.net/gh/insanebwoi/gmd-images@main/<path>
 
-Blog covers are 1400px wide WebP, cropped 16:9. The site declares them as
-1600x900 through a `?w=&h=` suffix on the URL, which jsDelivr ignores and
-social cards read, so a preview renders before the image is fetched.
+Blog covers are exactly 1400x787 WebP, which is 16:9. The site declares that
+size through a `?w=&h=` suffix on the URL   jsDelivr ignores it, social cards
+read it, and a preview renders before the image has been fetched. Keeping
+every cover to one size is what lets that suffix be a single true number
+rather than a per-file lookup.
 
 Replacing a cover: commit the new file under the same name. jsDelivr caches
 `@main` for up to 7 days, so either wait, purge it at
